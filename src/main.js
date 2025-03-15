@@ -1,10 +1,21 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 import { fetchImages } from './js/pixabay-api.js';
-import { showLoader, hideLoader, clearGallery } from './js/render-functions.js';
+import {
+  showLoader,
+  hideLoader,
+  clearGallery,
+  renderGallery,
+} from './js/render-functions.js';
 
 const searchForm = document.getElementById('search-form');
+let lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
 
 searchForm.addEventListener('submit', handleSearch);
 
