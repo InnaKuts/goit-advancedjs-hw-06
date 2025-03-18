@@ -12,7 +12,7 @@ import {
 } from './js/render-functions.js';
 
 const searchForm = document.getElementById('search-form');
-let lightbox = new SimpleLightbox('.gallery a', {
+let lightbox = new SimpleLightbox('.gallery .gallery-link', {
   captionsData: 'alt',
   captionDelay: 250,
 });
